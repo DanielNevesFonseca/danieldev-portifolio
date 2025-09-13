@@ -104,9 +104,9 @@ export default function Hero() {
           >
             <p className="text-white/60 inline">I&apos;m </p>
             <span className="bg-linear-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7]">
-              Adeola Badero
+              Daniel Neves
             </span>
-            <p>a Design Engineer</p>
+            <p>a Software Engineer</p>
           </motion.h1>
 
           <motion.p
@@ -114,22 +114,42 @@ export default function Hero() {
             animate={animateIn2}
             className="text-white/40  text-xl smm:text-2xl lg:text-3xl my-3"
           >
-            who works across the stack to deliver websites and web apps that
-            drive business growth forward.
+            who works for +2 years building solutions for consolidated companies
+            and startups.
           </motion.p>
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={animateIn3}
-          className="w-fit mx-auto lg:mx-0"
+          className="w-full mx-auto lg:mx-0 flex flex-col gap-5 md:flex-row"
         >
-          <ContraButton />
+          <a
+            href="https://wa.link/qpabi8"
+            target="_blank"
+            referrerPolicy="no-referrer"
+            className="w-full lg:w-fit"
+          >
+            <button className="w-full bg-white text-[#08233b] text-2xl uppercase font-semibold px-6 py-3 rounded ">
+              Hire me
+            </button>
+          </a>
+
+          <a
+            href="/resume_en.pdf"
+            target="_blank"
+            referrerPolicy="no-referrer"
+            className="w-full lg:w-fit"
+          >
+            <button className="w-full bg-white text-[#08233b] text-2xl uppercase font-semibold px-6 py-3 rounded ">
+              Download CV
+            </button>
+          </a>
         </motion.div>
       </div>
 
       {/* IMAGE */}
-      <div data-blobity-tooltip="Engineer">
+      <div data-blobity-tooltip="Software Engineer">
         <motion.div
           ref={imgRef}
           style={{
@@ -140,11 +160,12 @@ export default function Hero() {
           animate={animateIn1}
         >
           <Image
-            src="/transparent-ade-min.png"
+            src="/daniel_fundo_azul.png"
             priority
             fill
-            alt="Ade's picture"
-            className="bg-image-radial px-10 pt-20"
+            alt="Daniel's picture"
+            className="bg-image-radial object-contain"
+            quality={100}
           />
         </motion.div>
       </div>

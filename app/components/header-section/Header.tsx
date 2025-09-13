@@ -52,8 +52,8 @@ export default function Header() {
       >
         <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-linear-to-r from-[#d9d9d91f] to-[#7373731f] mt-4 sm:mt-8 backdrop-blur-md std-backdrop-blur">
           <Image
-            src="/ade-logo.svg"
-            width={32}
+            src="/mySignature.png"
+            width={150}
             height={36}
             alt="logo"
             className="select-none"
@@ -91,15 +91,18 @@ export default function Header() {
             </Link>
           </ul>
           <div className="gap-5 text-xl hidden sm:flex">
-            <Link target="_blank" href="https://linkedin.com/in/adeola-badero">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/danielnevesfonseca"
+            >
               <Icon icon="hugeicons:linkedin-01" />
-            </Link>
-            <Link target="_blank" href="https://github.com/adex-hub">
+            </a>
+            <a target="_blank" href="https://github.com/DanielNevesFonseca">
               <Icon icon="hugeicons:github" />
-            </Link>
-            <Link target="_blank" href="https://x.com/Ade_the_great">
+            </a>
+            {/* <Link target="_blank" href="https://x.com/Ade_the_great">
               <Icon icon="akar-icons:x-fill" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

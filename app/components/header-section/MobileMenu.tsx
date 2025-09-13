@@ -49,32 +49,32 @@ export default function MobileMenu({
       </ul>
 
       <div className="flex flex-col gap-3 z-20 items-center justify-center">
-        <Link
+        <a
           className="p-4 flex-1 flex justify-center w-full rounded-xl h-fit text-4xl visited:bg-[#E3D3BE] bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
           target="_blank"
-          href="https://linkedin.com/in/adeola-badero"
+          href="https://www.linkedin.com/in/danielnevesfonseca"
           data-blobity-radius="10"
         >
           <Icon icon="hugeicons:linkedin-01" />
-        </Link>
+        </a>
 
         <div className="flex gap-3 w-full">
-          <Link
+          <a
             className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
             target="_blank"
-            href="https://github.com/adex-hub"
+            href="https://github.com/DanielNevesFonseca"
             data-blobity-radius="10"
           >
             <Icon icon="hugeicons:github" />
-          </Link>
-          <Link
+          </a>
+          {/* <Link
             className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-linear-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur backdrop-blur-md"
             target="_blank"
             href="https://x.com/Ade_the_great"
             data-blobity-radius="10"
           >
             <Icon icon="akar-icons:x-fill" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </motion.div>

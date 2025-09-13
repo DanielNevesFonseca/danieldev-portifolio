@@ -10,55 +10,65 @@ import { ViewProvider } from "@/contexts/ViewContext";
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adeola Badero — Frontend Software Engineer",
+  // General Metadata
+  title: "Daniel Neves Fonseca - Full Stack Software Engineer",
   description:
-    "Frontend Engineer specializing in React, Next.js, and TypeScript. Creating modern, responsive web experiences with a focus on performance and accessibility. Let's build something amazing together.",
+    "Full Stack Software Engineer specializing in building efficient systems and intuitive interfaces with modern technologies. Explore my portfolio, projects, and experience.",
+  authors: [{ name: "Daniel Neves Fonseca" }],
   keywords: [
-    "frontend",
-    "react",
-    "tech",
-    "creative developer",
-    "UI development",
-    "frontend engineer",
-    "developer portfolio",
-    "creative development",
-    "nigeria",
-    "software",
-    "software developer",
-    "software engineer",
-    "portfolio",
+    "Full Stack Engineer",
+    "Software Developer",
+    "Mobile Development",
+    "Web Development",
+    "Frontend",
+    "Backend",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Nest.js",
+    ".NET",
+    "SQL",
+    "C#",
+    "Microsoft",
+    "React Native",
+    "Portfolio",
+    "Daniel Neves Fonseca",
   ],
+
+  // Open Graph (for social media link previews)
   openGraph: {
-    title: "Adeola Badero — Frontend Software Engineer",
+    title: "Daniel Neves Fonseca - Full Stack Software Engineer",
     description:
-      "Frontend Engineer formerly at Bluechip Technologies, passionate about crafting next-gen software and creative websites. I drive growth by crafting user experiences that blend aesthetics with functionality through my design and development skills. I thrive on turning ideas into seamless digital solutions.",
-    url: "https://www.adeolabadero.me",
-    siteName: "www.adeolabadero.me",
+      "Explore my portfolio showcasing projects, experience, and skills in modern web development technologies.",
+    url: "https://danieldev.net.br", // Your new portfolio URL
+    siteName: "Daniel Neves Fonseca's Portfolio",
     images: [
       {
-        url: "https://i.ibb.co/FKMqc28/adeola-badero.png",
+        // TODO: Replace with your public image URL (e.g., 1200x630px)
+        url: "/daniel_fundo_azul.png",
         width: 1200,
         height: 630,
-        alt: "Adeola Badero — Frontend Software Engineer",
-      },
-      {
-        url: "https://i.ibb.co/Y8hBTR4/ade-800.png",
-        width: 800,
-        height: 800,
-        alt: "Adeola Badero — Frontend Software Engineer",
+        alt: "Daniel Neves Fonseca - Full Stack Software Engineer",
       },
     ],
     locale: "en-US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Adeola Badero — Software Engineer",
-    description:
-      "Frontend Engineer specializing in React, Next.js, and TypeScript. Creating modern, responsive web experiences with a focus on performance and accessibility. Let's build something amazing together.",
-    creator: "@Ade_the_great",
-    images: ["https://i.ibb.co/FKMqc28/adeola-badero.png"],
-  },
+
+  // Twitter Card
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Daniel Neves Fonseca - Full Stack Software Engineer",
+  //   description:
+  //     "Specializing in building efficient systems and intuitive interfaces with modern technologies. Let's connect!",
+  //   // TODO: Add your Twitter handle if you have one
+  //   // creator: "@your_twitter_handle",
+  //   // TODO: Replace with your public image URL
+  //   images: ["YOUR_PUBLIC_IMAGE_URL.jpg"],
+  // },
+
+  // Robots and Indexing
   robots: {
     index: true,
     follow: true,
