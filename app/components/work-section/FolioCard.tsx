@@ -8,23 +8,26 @@ import Tag from "./Tag";
 // @ts-ignore
 import "intersection-observer";
 import { useInView } from "react-intersection-observer";
+import VideoPlayer from "../ui/VideoPlayer";
 
 export default function FolioCard({
   title,
-  img,
+  imgThumbnailURL,
   gitLink,
   liveLink,
   owner,
   about,
   stack,
+  videoUrl,
 }: {
-  img: string;
+  imgThumbnailURL: string;
   title: string;
   gitLink?: string;
   liveLink: string;
   owner?: string;
   about: string;
   stack: string[];
+  videoUrl?: string;
 }) {
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -35,17 +38,27 @@ export default function FolioCard({
   return (
     <div
       ref={ref}
-      className={`w-full rounded-[20px] std-backdrop-blur backdrop-blur-md bg-linear-to-r from-[#d9d9d91f] to-[#7373731f] grid grid-cols-1 items-start lg:grid-cols-12 xl:flex gap-5 xl:gap-10 p-6 duration-700 ${
+      className={`!grid grid-cols-1 w-full rounded-[20px] std-backdrop-blur backdrop-blur-md bg-linear-to-r from-[#d9d9d91f] to-[#7373731f]  items-start lg:grid-cols-12 xl:flex gap-5 xl:gap-10 p-6 duration-700 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
     >
-      <Image
+      {/* <Image
         src={img}
         width={420}
         height={700}
         alt="work"
         className="rounded-[10px] w-full lg:col-span-5"
-      />
+      /> */}
+
+      <div className="rounded-[10px] lg:col-span-5">
+        <VideoPlayer
+          videoUrl={videoUrl!}
+          mimeType={"video/mp4"}
+          tooltipMessage="Click to view on fullscreen mode"
+          thumbnailUrl={imgThumbnailURL}
+        />
+      </div>
+
       <div className="flex flex-col gap-4 lg:col-span-7">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold">
@@ -80,7 +93,7 @@ export default function FolioCard({
             </Link>
           </div>
         </div>
-        <p className="text-base text-white/70">{about}</p>
+        <p className="text-base text-white/70 text-ellipsis ...">{about}</p>
         <div className="flex gap-3 md:gap-4 flex-wrap">
           {stack.map((tech, index) => (
             <Tag key={index}>{tech}</Tag>

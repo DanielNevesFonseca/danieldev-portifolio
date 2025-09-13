@@ -13,37 +13,52 @@ export default function Works() {
 
   const works = [
     {
-      title: "Quiklearn",
-      liveLink: "https://quiklearn.app/",
+      title: "Event Management System ",
+      liveLink: "https://www.copastur.com.br/",
       about:
-        "Starting out as my university final year project, Quiklearn is an AI-powered tool, that creates quizzes and voice-enabled flashcards from course PDFs with a focus on usability and accessibility. This app has served well over twenty-five students helping them to assimilate and retain what they study better.",
+        "Copastur's event management system is an internal tool that streamlines registrations, from client briefing to proposal. It saves thousands of hours and expenses by automating financial calculations and client access, featuring user permissioning, Keycloak authentication, and a microservices architecture.",
+      stack: [
+        "react.js",
+        "Vite.js",
+        "TailwindCSS",
+        "typescript",
+        "javascript",
+        "C#",
+        ".NET",
+        "MS SQL Server",
+        "Azure",
+      ],
+      videoUrl: "/video/demo_copastur_reduced.mp4",
+      imgThumbnailURL: "mockup_copa.svg",
+      owner: "Copastur",
+    },
+    {
+      title: "iG My Account ",
+      liveLink: "https://www.ig.com.br/",
+      about:
+        "Web system designed to centralize all iG products and partners, creating a comprehensive marketplace hub for clients.",
       stack: [
         "next.js",
-        // "typescript",
-        "daisy ui",
-        "supabase",
-        "artificial intelligence",
+        "typescript",
+        "javascript",
+        "C#",
+        ".NET",
+        "MS SQL Server",
+        "Azure",
       ],
-      img: "/quiklearn.svg",
-      owner: "Quiklearn",
+      videoUrl: "/video/demo_ig_my_account.mp4",
+      imgThumbnailURL: "mockup_ig.svg",
+      owner: "iG Corp",
     },
     {
-      title: "NiJASIT",
-      liveLink: "https://nijasit.vercel.app/",
+      title: "RH Plus",
+      liveLink: "https://www.disnibra.com.br/",
       about:
-        "Leading the development efforts of the Nigerian Journal of Applied Science and Innovative Technology (NiJASIT)—a journal that aims to showcase African research to the global field and contribute to the world's knowledge base on science and technology—we delivered a fast, SEO-compliant journal that contributes to research on a global scale.",
-      stack: ["next.js", "javascript", "shadcn ui", "tailwindcss"],
-      img: "/nijasit.svg",
-      owner: "Bells Uni",
-    },
-    {
-      title: "Offset Africa",
-      liveLink: "https://offsetcomms.africa/",
-      about:
-        "Offset Communications Africa’s website really allows them to stand out in the PR sector. It shows their works and case studies — highlighting their expertise and educating users about the company philosophy.",
-      stack: ["next.js", "typescript", "framer motion", "tailwindcss"],
-      img: "/offset-folio.svg",
-      owner: "Offset",
+        "System projects to manage employee scheduling and access control.",
+      stack: ["react.js", "javascript", "Vercel"],
+      videoUrl: "/video/demo_rhplus.mp4",
+      imgThumbnailURL: "mockup_rhplus.svg",
+      gitLink: "https://github.com/DanielNevesFonseca/rh_plus_frontend",
     },
     // {
     //   title: "Shortly",
@@ -54,15 +69,15 @@ export default function Works() {
     //   stack: ["next.js", "typescript", "framer motion", "tailwindcss"],
     //   img: "/shortly.svg",
     // },
-    {
-      title: "Where in the world",
-      gitLink: "https://github.com/adex-hub/where-in-the-world",
-      liveLink: "https://where-in-the-world-ade.netlify.app/",
-      about:
-        "A fun tool for checking information about any country in the world such as the country’s native name, currency, population,  border countries etc. It features dynamic routing for each country and theme switch.",
-      stack: ["react", "react-router", "javascript", "tailwindcss"],
-      img: "/witw.svg",
-    },
+    // {
+    //   title: "Where in the world",
+    //   gitLink: "https://github.com/adex-hub/where-in-the-world",
+    //   liveLink: "https://where-in-the-world-ade.netlify.app/",
+    //   about:
+    //     "A fun tool for checking information about any country in the world such as the country’s native name, currency, population,  border countries etc. It features dynamic routing for each country and theme switch.",
+    //   stack: ["react", "react-router", "javascript", "tailwindcss"],
+    //   img: "/witw.svg",
+    // },
     // {
     //   title: "Yourtodo",
     //   gitLink: "https://github.com/adex-hub/Yourtodo",
@@ -102,13 +117,14 @@ export default function Works() {
       {works.map((work, index) => (
         <FolioCard
           key={index}
-          img={work.img}
+          imgThumbnailURL={work.imgThumbnailURL!}
           title={work.title}
           gitLink={work.gitLink}
           liveLink={work.liveLink}
           about={work.about}
           stack={work.stack}
           owner={work.owner}
+          videoUrl={work.videoUrl}
         />
       ))}
 
