@@ -31,6 +31,7 @@ export default function Works() {
       videoUrl: "/video/demo_copastur_reduced.mp4",
       imgThumbnailURL: "mockup_copa.svg",
       owner: "Copastur",
+      roles: ["Backend", "Frontend"],
     },
     {
       title: "iG My Account ",
@@ -49,16 +50,38 @@ export default function Works() {
       videoUrl: "/video/demo_ig_my_account.mp4",
       imgThumbnailURL: "mockup_ig.svg",
       owner: "iG Corp",
+      roles: ["Backend", "Frontend"],
     },
     {
       title: "RH Plus",
       liveLink: "https://www.disnibra.com.br/",
       about:
         "System projects to manage employee scheduling and access control.",
-      stack: ["react.js", "javascript", "Vercel"],
+      stack: ["react.js", "javascript", "TailwindCSS", "Docker", "Vercel"],
       videoUrl: "/video/demo_rhplus.mp4",
       imgThumbnailURL: "mockup_rhplus.svg",
       gitLink: "https://github.com/DanielNevesFonseca/rh_plus_frontend",
+      roles: ["Frontend"],
+    },
+    {
+      title: "Park Well",
+      liveLink: "https://aslsoftware.com.br/",
+      about:
+        "Parking management systems for cars, motorcycles and vallets created to replace desktop systems from ASL Software. I performed the initial web development both on the frontend and the backend.",
+      stack: [
+        "react.js",
+        "typescript",
+        "Bootstrap",
+        "Docker",
+        "Postgre SQL",
+        "nest.js",
+        "Typeorm",
+        "Swagger",
+      ],
+      videoUrl: "/video/estacionabem_demo.mp4",
+      imgThumbnailURL: "mockup_parkwell.svg",
+      gitLink: "https://github.com/DanielNevesFonseca/rh_plus_frontend",
+      roles: ["Backend", "Frontend"],
     },
     // {
     //   title: "Shortly",
@@ -125,6 +148,7 @@ export default function Works() {
           stack={work.stack}
           owner={work.owner}
           videoUrl={work.videoUrl}
+          roles={work.roles}
         />
       ))}
 

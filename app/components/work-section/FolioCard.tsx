@@ -19,6 +19,7 @@ export default function FolioCard({
   about,
   stack,
   videoUrl,
+  roles,
 }: {
   imgThumbnailURL: string;
   title: string;
@@ -27,6 +28,7 @@ export default function FolioCard({
   owner?: string;
   about: string;
   stack: string[];
+  roles: string[];
   videoUrl?: string;
 }) {
   const { ref, inView } = useInView({
@@ -61,9 +63,21 @@ export default function FolioCard({
 
       <div className="flex flex-col gap-4 lg:col-span-7">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold">
-            {title}
-          </h2>
+          <div className="flex flex-col gap-2 md:gap-5 items-start md:items-center justify-between w-full md:flex-row" >
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold">
+              {title}
+            </h2>
+            <ul className="flex md:flex-col gap-2 uppercase  font-bold mr-4">
+              {roles.map((role: string, index) => (
+                <li
+                  className=" text-[8px] md:text-xs px-2 py-1 md:px-4 md:py-2 border border-orange-400 flex items-center justify-center rounded w-full text-orange-400 "
+                  key={`${role}.${index}`}
+                >
+                  {role}
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="flex gap-3 md:gap-4 text-2xl sm:text-3xl xl:text-4xl">
             <Link
               href={liveLink}
