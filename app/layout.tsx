@@ -6,12 +6,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "./components/header-section/Header";
 import { ViewProvider } from "@/contexts/ViewContext";
+import emailjs from "@emailjs/browser";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   // General Metadata
-  title: "Daniel Neves Fonseca - Full Stack Software Engineer",
+  title: "Dan - Software Engineer",
   description:
     "Full Stack Software Engineer specializing in building efficient systems and intuitive interfaces with modern technologies. Explore my portfolio, projects, and experience.",
   authors: [{ name: "Daniel Neves Fonseca" }],
@@ -86,6 +87,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  emailjs.init({
+    publicKey: process.env.EMAILJS_PUBLIC_KEY!,
+    // Do not allow headless browsers
+    blockHeadless: true,
+    blockList: {
+      // Block the suspended emails
+      list: ["foo@emailjs.com", "bar@emailjs.com"],
+      // The variable contains the email address
+      watchVariable: "userEmail",
+    },
+    limitRate: {
+      // Set the limit rate for the application
+      id: "app",
+      // Allow 1 request per 10s
+      throttle: 10000,
+    },
+  });
+
   return (
     <html lang="en">
       <body

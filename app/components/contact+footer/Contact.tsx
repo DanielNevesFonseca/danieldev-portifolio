@@ -21,6 +21,7 @@ export default function Contact() {
   const { setSectionInView } = useView();
   const [viewCount, setViewCount] = useState<number>(0);
   const [formDisplay, setFormDisplay] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -43,46 +44,33 @@ export default function Contact() {
   // For email.js
   const formRef = useRef<HTMLFormElement>(null);
 
-  function onSubmit(data: any) {
-    console.log(data);
+  async function onSubmit(data: any) {
+    if (isSubmitting) return; // Prevent multiple submissions
+    setIsSubmitting(true);
 
-    emailjs
-      .sendForm(
-        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
-        formRef.current as HTMLFormElement,
-        {
-          publicKey: `${process.env.NEXT_PUBLIC_PUBLIC_KEY}`,
-        }
-      )
+    var params = {
+      service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      user_id: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+    };
+
+    var templateData = {
+      name: data.userName,
+      email: data.userEmail,
+      notes: data.userMessage,
+    };
+
+    await emailjs
+      .send(params.service_id, params.template_id, templateData, params.user_id)
       .then(
-        () => {
-          console.log("SUCCESS!");
-          toast.success("Message sent", {
-            position: "bottom-left",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-            className: `custom-toast font-kumbhSans`,
-          });
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          toast.success("Your message was sent successfully!");
           reset();
-          setTimeout(() => setFormDisplay(!formDisplay), 5000);
         },
         (error) => {
-          console.log("FAILED...", error.text);
-          toast.error("Message not sent, check your network", {
-            position: "bottom-left",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-            className: `custom-toast font-kumbhSans`,
-          });
+          console.log("FAILED...", error);
+          toast.error("Something is wrong. Try again in a few moments...");
         }
       );
   }
@@ -165,7 +153,7 @@ export default function Contact() {
             >
               <div className="flex items-center justify-between py-4 md:py-5 lg:py-6">
                 <Link
-                  href="https://cal.com/adeolabadero/30min"
+                  href="https://calendly.com/daniel-neves-fonseca"
                   target="_blank"
                   className={`font-bold uppercase ${syne.className} underline opacity-50`}
                 >
