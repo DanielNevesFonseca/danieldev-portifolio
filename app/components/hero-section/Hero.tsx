@@ -13,6 +13,7 @@ import { useView } from "@/contexts/ViewContext";
 import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 import ContraButton from "../about-section/ContraButton";
+import Link from "next/link";
 
 export default function Hero() {
   const handWaveAnimation = {
@@ -135,7 +136,7 @@ export default function Hero() {
             </button>
           </a>
 
-          <a
+          <Link
             href="/resume_en.pdf"
             target="_blank"
             referrerPolicy="no-referrer"
@@ -144,7 +145,7 @@ export default function Hero() {
             <button className="w-full bg-white text-[#08233b] text-2xl uppercase font-semibold px-6 py-3 rounded ">
               Download CV
             </button>
-          </a>
+          </Link>
         </motion.div>
       </div>
 

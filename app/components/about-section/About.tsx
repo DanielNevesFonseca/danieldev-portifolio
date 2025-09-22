@@ -28,34 +28,33 @@ export default function About() {
         charSpace={"mr-[0.001em]"}
         className={`uppercase ${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80`}
       >
-        I amplify brand voices through the web
+        I help companies to thrive with software.
       </AnimatedTitle>
       <div className="grid grid-cols-1 lg:grid-cols-[8.5fr_3.5fr] gap-8 mt-6">
         <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl">
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
-            My passion lies in creating strong business solutions that aid
-            business growth. Whether it&apos;s a website to boost brand
-            publicity or software solutions that streamline otherwise manual
-            processes, I love taking brands from point A to the their dreamy
-            point B and iteratively improve as time goes on.
+            My lifelong passion for technology began with hardware and networks,
+            understanding how systems work from the ground up. To build upon
+            that foundation, I pursued a degree in Systems Analysis and
+            Development, which gave me the structured knowledge to architect and
+            manage complex IT systems effectively. This blend of formal
+            education and practical experience is the core of my problem-solving
+            approach.
           </AnimatedBody>
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
-            From writing my first lines of code back in late 2019 to this point
-            I have continually refined my development skills overtime picking up
-            UI/UX design on the way & solving complex challenges increasing the
-            complexity as time goes by to ensure improvement.
+            Today, as a software engineer, I apply this complete perspective to
+            everything I build. Whether I'm freelancing on a new MVP for a
+            client or debugging a challenging issue, I am dedicated to creating
+            solutions that are well-engineered from concept to deployment. I
+            love making technology work seamlessly, and I have the full-stack
+            skills to make it happen.
           </AnimatedBody>
           <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
             Each challenge is unique so I ensure that I learn and grow through
             each one ensuring that I not only put in my best but also deliver
             solutions that businesses are proud to call their own. Wanna learn
             more? Here&apos;s <br className="hidden md:block" />
-            <Link
-              className="underline"
-              href={
-                "https://drive.google.com/file/d/1Rd-IB_5pxsGj4RDtHjEggPB392ND29xB/view?usp=sharing"
-              }
-            >
+            <Link className="underline" href="/resume_en.pdf">
               my résumè
             </Link>
             .
@@ -71,8 +70,8 @@ export default function About() {
               Frontend Tools
             </AnimatedTitle>
             <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              JavaScript(ES6+), React, Next.js, TypeScript, Redux, Redux
-              Toolkit, React Query, HTML5, Git/GitHub, React Hook Form, Formik.
+              JavaScript(ES6+), React, Next.js, TypeScript, Jotai, React Query,
+              HTML5, Git/GitHub, React Hook Form.
             </AnimatedBody>
           </div>
           <div>
@@ -84,10 +83,36 @@ export default function About() {
               UI Libraries
             </AnimatedTitle>
             <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              CSS3/SCSS/SASS, Tailwind CSS, Styled Components, Chakra UI, Framer
-              Motion, Bootstrap, ReCharts.
+              CSS3/SCSS/SASS, Tailwind CSS, Styled Components, Bootstrap,
+              Shadcn/ui
             </AnimatedBody>
           </div>
+          <div>
+            <AnimatedTitle
+              wordSpace={"mr-[0.5ch]"}
+              charSpace={"mr-[0.001em]"}
+              className="font-bold antialiased text-xl md:text-2xl mb-2"
+            >
+              Backend Tools
+            </AnimatedTitle>
+            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
+              JavaScript(ES6+), TypeScript, Node.js, Nest.js, Express.js,
+              Prisma, Typeorm, Python, Django, C#, .NET, SQL, REST API
+            </AnimatedBody>
+          </div>
+          <div>
+            <AnimatedTitle
+              wordSpace={"mr-[0.5ch]"}
+              charSpace={"mr-[0.001em]"}
+              className="font-bold antialiased text-xl md:text-2xl mb-2"
+            >
+              DevOps Tools
+            </AnimatedTitle>
+            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
+              Docker, Azure, AWS, Vercel, Render
+            </AnimatedBody>
+          </div>
+
           <div>
             <AnimatedTitle
               wordSpace={"mr-[0.5ch]"}
@@ -97,13 +122,22 @@ export default function About() {
               Design Tools
             </AnimatedTitle>
             <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              Figma, FigJam, UX Research, UI Design, Prototyping.
+              Figma, FigJam, UI Design, Prototyping
             </AnimatedBody>
           </div>
         </div>
       </div>
       <div className="mt-10 sm:mt-20 lg:mt-10 mx-auto w-fit">
-        <ContraButton />
+        <a
+          href="https://wa.link/qpabi8"
+          target="_blank"
+          referrerPolicy="no-referrer"
+          className="w-full lg:w-fit"
+        >
+          <button className="w-full bg-white text-[#08233b] text-2xl uppercase font-semibold px-6 py-3 rounded ">
+            Hire me
+          </button>
+        </a>
       </div>
     </section>
   );
